@@ -1,0 +1,48 @@
+<odoo>
+    <!--    form view   -->
+    <record id="rest_staff_form_view_id" model="ir.ui.view">
+        <field name="name">rest.staff.form.view.id</field>
+        <field name="model">rest.staff</field>
+        <field name="arch" type="xml">
+            <form string="Staff Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                        </group>
+                        <group>
+                            <field name="dob"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="rest_staff_form_view_id_action" model="ir.actions.act_window">
+        <field name="name">restaurant</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">rest.staff</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--    Tree view   -->
+    <record id="rest_staff_tree_view_id" model="ir.ui.view">
+        <field name="name">rest.staff.tree.view.id</field>
+        <field name="model">rest.staff</field>
+        <field name="arch" type="xml">
+            <tree string="Staff Form">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="dob"/>
+                <field name="mobile"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="rest_main_menu" name="Restaurant" parent="sale.menu_sale_report"
+              action="rest_staff_form_view_id_action"/>
+</odoo>
